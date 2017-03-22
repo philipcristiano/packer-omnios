@@ -16,5 +16,12 @@
     "instance_type": "t1.micro",
     "ssh_username": "root",
     "ami_name": "omnios-packer-example-{{timestamp}}"
+  }],
+  "provisioners": [{
+    "type": "shell",
+    "inline": [
+      "sleep 30",
+      "curl https://raw.githubusercontent.com/philipcristiano/AWSMF-Data/master/install | bash"
+    ]
   }]
 }
